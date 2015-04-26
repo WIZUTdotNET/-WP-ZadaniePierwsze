@@ -19,5 +19,19 @@ namespace CellPhoneKeypad
         {
             InitializeComponent();
         }
+
+        private void ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var clickedButtonTag = ((Button) sender).Tag.ToString();
+            DigitalDisplay.Text = clickedButtonTag;
+
+            if (clickedButtonTag == "*") clickedButtonTag = "star";
+            else if (clickedButtonTag == "#") clickedButtonTag = "hash";
+
+            var fileToPlay = "/Assets/Sounds/keyNumber_" + clickedButtonTag + ".mp3";
+
+            PressedButtonPlayer.Source = new Uri(fileToPlay, UriKind.Relative);
+            PressedButtonPlayer.Play();
+        }
     }
 }
