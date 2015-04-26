@@ -12,6 +12,14 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="7"/>
+            <Setter Property="FontFamily" Value="/Assets/Fonts/digi.ttf#DS-Digital"/>
+            <Setter Property="FontSize" Value="50"/>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -42,16 +50,27 @@
             </Grid.ColumnDefinitions>
             
             <Rectangle Fill="White" Grid.ColumnSpan="3" Margin="0,20" />
-            <TextBlock 
-                Grid.ColumnSpan="3"
-                Name=""
-                Text="-" Foreground="Black"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                
-                
-                />
-
+            <TextBlock
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                Name="DigitalDisplay"
+                Text="-" FontSize="50"  Foreground="Black" 
+                FontFamily="/CellPhoneKeypad;component/Assets/Fonts/digi.ttf#DS-Digital"
+                HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            
+            <Button Grid.Row="1" Grid.Column="0" Content="1"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="2"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="3"/>
+            <Button Grid.Row="2" Grid.Column="0" Content="4"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="5"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="6"/>
+            <Button Grid.Row="3" Grid.Column="0" Content="7"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="8"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="9"/>
+            <Button Grid.Row="4" Grid.Column="0" Content="*"/>
+            <Button Grid.Row="4" Grid.Column="1" Content="0"/>
+            <Button Grid.Row="4" Grid.Column="2" Content="#"/>
+            
+            <MediaElement Name="KeyOnPressPlayer" Volume="1" AutoPlay="True"/>
         </Grid>
     </Grid>
 

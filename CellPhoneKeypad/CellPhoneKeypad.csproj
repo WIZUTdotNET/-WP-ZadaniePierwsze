@@ -121,7 +121,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Fonts\digi.ttf" />
+    <Content Include="ApplicationIcon.png" />
+    <Content Include="Assets\Fonts\digi.ttf" />
+    <Content Include="IconicTileMediumLarge.png" />
+    <Content Include="IconicTileSmall.png" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
