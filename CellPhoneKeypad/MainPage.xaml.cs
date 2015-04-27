@@ -22,13 +22,13 @@ namespace CellPhoneKeypad
 
         private void ButtonClicked(object sender, RoutedEventArgs e)
         {
-            var clickedButtonTag = ((Button) sender).Tag.ToString();
-            DigitalDisplay.Text = clickedButtonTag;
+            var clickedButtonContent = ((Button) sender).Content.ToString();
+            DigitalDisplay.Text = clickedButtonContent;
 
-            if (clickedButtonTag == "*") clickedButtonTag = "star";
-            else if (clickedButtonTag == "#") clickedButtonTag = "hash";
+            if (clickedButtonContent == "*") clickedButtonContent = "star";
+            else if (clickedButtonContent == "#") clickedButtonContent = "hash";
 
-            var fileToPlay = "/Assets/Sounds/keyNumber_" + clickedButtonTag + ".mp3";
+            var fileToPlay = "/Assets/Sounds/keyNumber_" + clickedButtonContent + ".mp3";
 
             PressedButtonPlayer.Source = new Uri(fileToPlay, UriKind.Relative);
             PressedButtonPlayer.Play();
