@@ -22,6 +22,7 @@ namespace CellPhoneKeypad
 
         private void ButtonClicked(object sender, RoutedEventArgs e)
         {
+            sender = null;
             var clickedButtonContent = ((Button) sender).Content.ToString();
             DigitalDisplay.Text = clickedButtonContent;
 
