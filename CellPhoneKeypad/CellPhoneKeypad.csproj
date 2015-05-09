@@ -121,6 +121,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Fonts\digi.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -133,6 +136,18 @@
     </Content>
     <Content Include="Assets\BadgeLogo.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Sounds\keyNumber_0.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_1.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_2.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_3.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_4.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_5.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_6.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_7.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_8.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_9.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_hash.mp3" />
+    <Content Include="Assets\Sounds\keyNumber_star.mp3" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\SquareTile150x150.png" />
     <Content Include="Assets\SquareTile71x71.png" />

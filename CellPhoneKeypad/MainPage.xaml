@@ -17,19 +17,71 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Keypad" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
+        <Border
+            Margin="20,0,20,12"
+            BorderBrush="White"
+            BorderThickness="10"
+            Background="White"
+            Grid.Row="1">
+            <TextBlock
+                x:Name="NumberTextBlock"
+                Height="72"
+                TextAlignment="Center"
+                FontFamily="/Assets/Fonts/digi.ttf#DS-Digital"
+                FontSize="70"
+                Foreground="Black"
+                Text="-"
+                />
+        </Border>
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="8,0,8,12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
+            <!-- First Row -->
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="1" Style="{StaticResource KeypadButtonStyle}" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="2" Style="{StaticResource KeypadButtonStyle}" Grid.Column="1" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="3" Style="{StaticResource KeypadButtonStyle}" Grid.Column="2" />
+
+            <!-- Second Row -->
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="4" Style="{StaticResource KeypadButtonStyle}" Grid.Row="1" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="5" Style="{StaticResource KeypadButtonStyle}" Grid.Row="1" Grid.Column="1" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="6" Style="{StaticResource KeypadButtonStyle}" Grid.Row="1" Grid.Column="2" />
+
+            <!-- Third Row -->
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="7" Style="{StaticResource KeypadButtonStyle}" Grid.Row="2" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="8" Style="{StaticResource KeypadButtonStyle}" Grid.Row="2" Grid.Column="1" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="9" Style="{StaticResource KeypadButtonStyle}" Grid.Row="2" Grid.Column="2" />
+
+            <!-- Fourth Row -->
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="*" Style="{StaticResource KeypadButtonStyle}" Grid.Row="3" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="0" Style="{StaticResource KeypadButtonStyle}" Grid.Row="3" Grid.Column="1" />
+            <Button ManipulationStarted="KeypadButtonManipulationStarted" Content="#" Style="{StaticResource KeypadButtonStyle}" Grid.Row="3" Grid.Column="2" />
+            
+            <MediaElement x:Name="KeySoundMediaElement" Volume="1" AutoPlay="False" />
+            
         </Grid>
+
     </Grid>
 
 </phone:PhoneApplicationPage>
+    

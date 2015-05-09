@@ -8,6 +8,12 @@
     <!--Application Resources-->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:CellPhoneKeypad" x:Key="LocalizedStrings"/>
+
+        <Style x:Name="KeypadButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="/Assets/Fonts/digi.ttf#DS-Digital" />
+            <Setter Property="FontSize" Value="48" />
+            <Setter Property="BorderThickness" Value="10"></Setter>
+        </Style>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
